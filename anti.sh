@@ -69,8 +69,10 @@ iptables -A IN_DPI_RULES -m comment --comment "Jump back to main filter rules" -
 iptables -A IN_CUSTOMRULES -p tcp -m tcp --dport 22 -m conntrack --ctstate NEW -s 0.0.0.0/0 -m comment --comment "Allow SSH" -j SAFEZONE
 iptables -A IN_CUSTOMRULES -m comment --comment "Jump back to main filter rules" -j RETURN
 iptables -A IN_CUSTOMRULES -m comment --comment "Explicit drop rule */paranoid*/" -j DROP
-iptables -A SAFEZONE -s 103.173.155.236/32 -j ACCEPT
-iptables -A SAFEZONE -j RETURN
+iptables -A SAFEZONE -s 103.173.155.236/32 -m comment --comment "allow-ingress-from-xxx-secure-IP" -j ACCEPT
+iptables -A SAFEZONE -s 103.173.155.236/32 -m comment --comment "allow-ingress-from-xxx-secure-IP" -j ACCEPT
+iptables -A SAFEZONE -s 103.173.155.236/32 -m comment --comment "allow-ingress-from-xxx-hq" -j ACCEPT
+iptables -A SAFEZONE -m comment --comment "JUMP back to IN_CUSTOMRULES chain" -j RETURN
 iptables -I INPUT -p tcp -s 103.84.76.0/22 -m tcp --dport 80 -j ACCEPT
 iptables -I INPUT -p tcp -s 115.72.0.0/13 -m tcp --dport 80 -j ACCEPT
 iptables -I INPUT -p tcp -s 117.0.0.0/13 -m tcp --dport 80 -j ACCEPT
