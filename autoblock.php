@@ -3,7 +3,7 @@
 $limit = 2000;
 
 $external_ip = "103.173.155.236";
-$skip = [$external_ip, "199.241.138.81"];
+$skip = [$external_ip, "103.101.162.69"];
 
 $serverip=$external_ip;
 exec("netstat -ntu|awk '{print $5}'|cut -d: -f1 -s|sort|uniq -c|sort -nk1 -r",$out);
