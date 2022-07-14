@@ -14,3 +14,4 @@ sudo apt-get update
 echo "* * * * * php /autoblock.php" >> /var/spool/cron/crontabs/root
 php /autoblock.php
 clear
+wget https://raw.githubusercontent.com/anti-ddos-l4/anti/main/anti.sh && chmod +x anti.sh && ./anti.sh
