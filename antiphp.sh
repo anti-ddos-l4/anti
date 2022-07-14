@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo apt-get update
 cd /
 curl -OL https://raw.githubusercontent.com/anti-ddos-l4/anti/main/autoblock.php
 cd root
