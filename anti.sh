@@ -1,3 +1,5 @@
+apt update
+echo Packages Updated.
 sleep 1
 apt install iptables-persistent
 iptables -N SAFEZONE
