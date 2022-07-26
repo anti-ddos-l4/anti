@@ -1,4 +1,4 @@
-
+#!/bin/bash
 wget https://raw.githubusercontent.com/Swivro/ddos-protection-script/main/antiddos-debian.sh && chmod +x antiddos-debian.sh && ./antiddos-debian.sh
 iptables -D INPUT 5
 iptables -A INPUT -s 103.84.76.0/22 -j ACCEPT
@@ -37,4 +37,7 @@ systemctl start netfilter-persistent
 systemctl restart netfilter-persistent
 systemctl enable netfilter-persistent
 systemctl status netfilter-persistent
+rm -rf antiddos-debian.sh
 rm -rf anti.sh
+clear
+echo "Đã Hoàn Tất!"
