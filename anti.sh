@@ -1,5 +1,5 @@
 #!/bin/bash
-wget https://raw.githubusercontent.com/Swivro/ddos-protection-script/main/antiddos-debian.sh && chmod +x antiddos-debian.sh && ./antiddos-debian.sh
+curl -OL https://raw.githubusercontent.com/Swivro/ddos-protection-script/main/antiddos-debian.sh && chmod +x antiddos-debian.sh && ./antiddos-debian.sh
 iptables -D INPUT 5
 iptables -A INPUT -s 103.84.76.0/22 -j ACCEPT
 iptables -A INPUT -s 115.72.0.0/13 -j ACCEPT
